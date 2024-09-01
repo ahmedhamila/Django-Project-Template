@@ -1,0 +1,21 @@
+[flake8]
+# Exclude some directories and files
+exclude =
+    **site-packages**
+    **virtualenv**
+    **setuptools**
+    migrations
+    __pycache__
+    manage.py
+    settings.py
+    env
+    .venv
+    venv
+    .env
+    .pytest_cache
+    .git/
+    core/settings/*
+    */__init__.py
+max-line-length = 100
+inline-quotes = double
+multiline-quote = double
