@@ -15,7 +15,7 @@ schema_view = get_schema_view(
         description="API description",
         terms_of_service="",
         contact=openapi.Contact(email=""),
-        license=openapi.License(name="")
+        license=openapi.License(name=""),
     ),
     public=True,
 )
