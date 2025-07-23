@@ -11,6 +11,7 @@ This Django starter template includes:
 * ✅ **Custom Role-Based Authorization** — flexible system to define roles and permissions, and assign them per user.
 * ✅ **Automatic Dockerized Workflow** — fully configured `docker-compose` to spin up Postgres and Django, handle migrations, and create a superuser automatically if credentials are provided.
 * ✅ **Integrated API Documentation** — automatic, interactive **Swagger UI** to test your endpoints easily.
+* ✅ **CamelCase API support** — automatic camelCase rendering and parsing for requests and responses using `djangorestframework-camel-case`.
 * ✅ **API Pagination Ready** — sensible pagination defaults for any list endpoints.
 * ✅ **Production-Ready Environment Separation** — organized `settings` for base, development, and production.
 * ✅ **Custom App Generator** — quickly scaffold new Django apps with a clean, consistent structure.
