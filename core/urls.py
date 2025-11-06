@@ -7,6 +7,8 @@ from django.urls import path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
+from core.env import config
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -23,17 +25,22 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/example_app/", include("src.example_app.urls")),
     path("api/users/", include("src.users.urls")),
-    path(
-        "",
-        schema_view.with_ui("swagger", cache_timeout=0),
-        name="schema-swagger-ui",
-    ),
-    path(
-        "redoc/",
-        schema_view.with_ui("redoc", cache_timeout=0),
-        name="schema-redoc",
-    ),
 ] + static(
     settings.MEDIA_URL,
     document_root=settings.MEDIA_ROOT,
 )
+
+DEBUG = config("DEBUG")
+if DEBUG == "True" or DEBUG is True:
+    urlpatterns += [
+        path(
+            "",
+            schema_view.with_ui("swagger", cache_timeout=0),
+            name="schema-swagger-ui",
+        ),
+        path(
+            "redoc/",
+            schema_view.with_ui("redoc", cache_timeout=0),
+            name="schema-redoc",
+        ),
+    ]

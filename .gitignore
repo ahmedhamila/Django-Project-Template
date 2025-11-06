@@ -132,3 +132,5 @@ db.sqlite3
 
 # Except for __init__.py files inside migration folders
 !**/migrations/__init__.py
+
+static/
